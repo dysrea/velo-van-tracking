@@ -1,0 +1,102 @@
+{
+    "users": [
+        {
+            "id": "super_admin",
+            "email": "admin@school.com",
+            "password": "admin",
+            "role": "admin",
+            "status": "approved"
+        },
+        {
+            "email": "99@test.com",
+            "password": "9999",
+            "role": "agency",
+            "agency_name": "Agency99",
+            "id": "88ef51de-46c8-4ab0-9ea8-2ea1bcd2c243",
+            "status": "approved"
+        }
+    ],
+    "vans": [
+        {
+            "id": "a238b577-f569-4756-af85-a24275f1a067",
+            "van_number": "007",
+            "capacity": 7,
+            "agency_id": "88ef51de-46c8-4ab0-9ea8-2ea1bcd2c243",
+            "assigned_driver_id": "5cc1f38e-9f95-48d9-bc7f-631fb7eaf4b5",
+            "status": "approved",
+            "track_always": false,
+            "current_lat": 18.591014,
+            "current_lng": 73.752531,
+            "start_lat": 18.5204,
+            "start_lng": 73.8567,
+            "last_active": "On Route"
+        }
+    ],
+    "drivers": [
+        {
+            "id": "5cc1f38e-9f95-48d9-bc7f-631fb7eaf4b5",
+            "name": "JK",
+            "email": "jk@test.com",
+            "password": "jkjk",
+            "agency_id": "88ef51de-46c8-4ab0-9ea8-2ea1bcd2c243",
+            "assigned_van_id": "a238b577-f569-4756-af85-a24275f1a067",
+            "status": "approved"
+        }
+    ],
+    "students": [
+        {
+            "id": "2a138a40-6365-4972-bcc9-054449e0aa5e",
+            "name": "AN",
+            "home_lat": 18.59601,
+            "home_lng": 73.794867,
+            "school_lat": 18.60883,
+            "school_lng": 73.745011,
+            "agency_id": "88ef51de-46c8-4ab0-9ea8-2ea1bcd2c243",
+            "assigned_van_id": null,
+            "schedule": "Both",
+            "status": "approved"
+        }
+    ],
+    "routes": [
+        {
+            "id": "dcf6e9d0-c691-4dce-ab3e-e13c4006f950",
+            "agency_id": "88ef51de-46c8-4ab0-9ea8-2ea1bcd2c243",
+            "van_id": "a238b577-f569-4756-af85-a24275f1a067",
+            "driver_id": "5cc1f38e-9f95-48d9-bc7f-631fb7eaf4b5",
+            "trip_type": "Pickup (Home -> School)",
+            "stops": [
+                {
+                    "id": "start_depot",
+                    "name": "\ud83d\udea9 START (DEPOT)",
+                    "home_lat": 18.5204,
+                    "home_lng": 73.8567,
+                    "type": "depot",
+                    "status": "approved"
+                },
+                {
+                    "id": "2a138a40-6365-4972-bcc9-054449e0aa5e",
+                    "name": "AN",
+                    "home_lat": 18.59601,
+                    "home_lng": 73.794867,
+                    "school_lat": 18.60883,
+                    "school_lng": 73.745011,
+                    "agency_id": "88ef51de-46c8-4ab0-9ea8-2ea1bcd2c243",
+                    "assigned_van_id": null,
+                    "schedule": "Both",
+                    "status": "approved"
+                },
+                {
+                    "id": "end_school",
+                    "name": "\ud83c\udfeb SCHOOL (Drop-off)",
+                    "home_lat": 18.60883,
+                    "home_lng": 73.745011,
+                    "type": "school",
+                    "status": "approved"
+                }
+            ],
+            "student_ids": [
+                "2a138a40-6365-4972-bcc9-054449e0aa5e"
+            ]
+        }
+    ]
+}

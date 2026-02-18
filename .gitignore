@@ -1,0 +1,25 @@
+# --- Flutter/Dart ---
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+.pub-cache/
+.pub/
+
+# --- Android ---
+**/.gradle/
+**/captured_builds/
+**/.idea/
+**/local.properties
+
+# --- Python / Backend ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+db.sqlite3
+velo.db
