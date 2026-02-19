@@ -4,11 +4,38 @@ from sqlalchemy.orm import Session
 from typing import List, Optional
 import json
 import uuid
+from sqlalchemy.orm import Session
+from database import SessionLocal
+import models
+import auth
 
 import models, auth
 from database import engine, get_db
 
 models.Base.metadata.create_all(bind=engine)
+def seed_admin():
+    db = SessionLocal()
+    # Check if the admin already exists
+    existing_admin = db.query(models.User).filter(models.User.role == "admin").first()
+    
+    if not existing_admin:
+        print("No admin found. Auto-creating default admin...")
+        # Create the admin user (Update the fields to match your actual User model)
+        new_admin = models.User(
+            agency_name="admin", 
+            email="admin@velo.com",
+            # Replace 'get_password_hash' with however you hash passwords in your code
+            hashed_password=auth.get_password_hash("admin123"), 
+            role="admin",
+            status="approved" # Or whatever makes them active
+        )
+        db.add(new_admin)
+        db.commit()
+        print("Admin created: admin@velo.com / admin123")
+    db.close()
+
+# Run the function every time the server starts
+seed_admin()
 
 app = FastAPI()
 
