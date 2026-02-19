@@ -10,9 +10,12 @@ import 'admin_dashboard.dart';
 import 'driver_dashboard.dart';
 
 void main() {
+  // const String myComputerIp = "192.168.1.5";
   String smartUrl = kIsWeb 
       ? "http://localhost:8000/login"   // Browser
-      : "http://10.0.2.2:8000/login";   // Android Emulator
+      // : "http://$myComputerIp:8000/login";
+      : "http://10.0.2.2:8000/login";  // Mobile Emulator
+
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
